@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to smart!</title>
+     
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!-- we import arjs version without NFT but with marker + location based support -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
+    
+  </head> 
+  <style>
+    .buttons {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 15em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .icon1 {
+      background: url('Icons_smartlab_wasistdas.png');
+      background-position:center;
+      background-size: contain;
+      background-repeat:no-repeat;
+      border: none;
+      width: 120px;
+      height: 120px;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+    .icon1:hover {
+      background: url('Icons_smartlab_wasistdas-pressed.png');
+      background-position:center;
+      background-size: contain;
+    }
+    .icon2 {
+      background: url('Icons_smartlab_nützlichkeit.png');
+      background-position:center;
+      background-size: contain;
+      background-repeat:no-repeat;
+      border: none;
+      width: 120px;
+      height: 120px;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+    .icon2:hover {
+      background: url('Icons_smartlab_nützlichkeit-pressed.png');
+      background-position:center;
+      background-size: contain;
+    }
+    .icon3 {
+      background: url('Icons_smartlab_spezifikationen.png');
+      background-position:center;
+      background-size: contain;
+      background-repeat:no-repeat;
+      border: none;
+      width: 120px;
+      height: 120px;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+    .icon3:hover {
+      background: url('Icons_smartlab_spezifikationen-pressed.png');
+      background-position:center;
+      background-size: contain;
+    }
+    .icon4 {
+      background: url('Icons_smartlab_imsmartlab.png');
+      background-position:center;
+      background-size: contain;
+      background-repeat:no-repeat;
+      border: none;
+      width: 120px;
+      height: 120px;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+    .icon4:hover {
+      background: url('Icons_smartlab_imsmartlab-pressed.png');
+      background-position:center;
+      background-size: contain;
+    }
+    .tafeln{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 70em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+  </style>
+  <body style="margin : 0px; overflow: hidden;">
+    
+    <div class="buttons">
+      <button id="icon1" class="icon1" onclick="ClickIcon1()"></button>
+      <button id="icon2" class="icon2" onclick="ClickIcon2()"></button>
+      <button id="icon3" class="icon3" onclick="ClickIcon3()"></button>
+      <button id="icon4" class="icon4" onclick="ClickIcon4()"></button>
+    </div>
+    
+    <div class="tafeln">
+      <img id="wasistdas" src="Icons_smartlab_imsmartlab.png" display= "block" margin-left= "auto" margin-right= "auto">
+    </div>
+    
+    <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector id="scene">
+      <script>
+        function ClickIcon1() {
+          var x = document.getElementById("wasistdas");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        
+        /*window.onload = function () {
+          document
+            //.querySelector(".buttons")
+            document.getElementById("icon1").addEventListener("click", function () {  
+            alert("Was ist das?");
+            });
+            document.getElementById("icon2").addEventListener("click", function () {  
+            alert("Nützlichkeit");
+            });
+          document.getElementById("icon3").addEventListener("click", function () {  
+            alert("Spezifikationen");
+            });
+          document.getElementById("icon4").addEventListener("click", function () {  
+            alert("Im smart.lab");
+            });
+        }; */
+        
+      </script>
+      
+      <a-marker raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="marker" type="pattern" url="https://raw.githubusercontent.com/teresavr15/Vitrine-AR-content/main/pattern-smartLab%20B%26W.patt">
+        
+        
+        <a-entity
+          id="robot"
+          class="clickable"
+          position="0.8 -1 1"
+          rotation="-90 0 0"
+          scale="0.2 0.2 0.2"
+          gltf-model="Roboter Arm gltf.glb"
+          gesture-handler
+        ></a-entity>
+
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
