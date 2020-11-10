@@ -10,7 +10,9 @@
     <script src="gesture-handler.js"></script>
     
   </head> 
+  
   <style>
+    @media only screen and (min-width: 992px) {
     .buttons {
       position: absolute;
       bottom: 0;
@@ -20,9 +22,99 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 1;
+      z-index: 2;
     }
-
+      .weitereInfos{
+      background: url('https://cdn.glitch.com/cd07a777-b268-452c-9877-274463a4dad4%2FweitereInfos-gut.png?v=1604584470786');
+      background-size: contain;
+      position: fixed;
+      bottom: 17%;
+      left: 35%;
+      width: 28%;
+      height: 18%;
+      z-index: 3;
+      display: none;
+      opacity: 0.7;
+    }
+       .scannen{
+      background: url('https://cdn.glitch.com/cd07a777-b268-452c-9877-274463a4dad4%2FScannen.png?v=1604584917603');
+      background-size: contain;
+      position: fixed;
+      top: 17%;
+      left: 10%;
+      width: 28%;
+      height: 18%;
+      z-index: 3;
+      display: none;
+      opacity: 0.7;
+    }
+     .wasistdas{
+      background: url('https://cdn.glitch.com/cd07a777-b268-452c-9877-274463a4dad4%2Fsmartlab_wasist_makeblockultimate.png?v=1603890817354');
+      background-size: cover;
+      position: fixed;
+      top: 20%;
+      left: 30%;
+      width: 40%;
+      height: 40%;
+      z-index: 1;
+      display: none;
+    }
+    .nützlichkeit{
+      background: url('https://cdn.glitch.com/cd07a777-b268-452c-9877-274463a4dad4%2Fsmartlab_n%C3%BCtzlichkeit_makeblockultimate.png?v=1603797258038');
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      left: 30%;
+      width: 40%;
+      height: 72%;
+      z-index: 1;
+      display: none;
+    }
+    .specs{
+      background: url('https://cdn.glitch.com/cd07a777-b268-452c-9877-274463a4dad4%2Fsmartlab_spezifikationen_makeblockultimate.png?v=1603797258120');
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      left: 35%;
+      width: 27%;
+      height: 80%;
+      z-index: 1;
+      display: none;
+    }
+    .imsmartlab{
+      background: url('https://cdn.glitch.com/cd07a777-b268-452c-9877-274463a4dad4%2Fsmartlab_imsmartlab_makeblockultimate.png?v=1603797257722');
+      background-size: cover;
+      position: fixed;
+      top: 20%;
+      left: 30%;
+      width: 40%;
+      height: 35%;
+      z-index: 1;
+      display: none;
+    }
+      .iconInfo {
+      position: absolute;
+      top: 2%;
+      left: 1%;
+      width: 100%;
+      height: 15em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      background: url('https://cdn.glitch.com/cd07a777-b268-452c-9877-274463a4dad4%2Fboton-de-informacion.png?v=1604580877172');
+      background-position:center;
+      background-size: contain;
+      background-repeat:no-repeat;
+      border: none;
+      width: 30px;
+      height: 30px;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+      .iconInfo:hover {
+      opacity: 0.5;
+    }
     .icon1 {
       background: url('Icons_smartlab_wasistdas.png');
       background-position:center;
@@ -87,37 +179,273 @@
       background-position:center;
       background-size: contain;
     }
-  </style>
+  }
+  </style> 
+    <style>
+      @media only screen and (max-width: 480px) {
+    .buttons {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 15em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+      .weitereInfos{
+      background: url('https://cdn.glitch.com/cd07a777-b268-452c-9877-274463a4dad4%2FweitereInfos-gut.png?v=1604584470786');
+      background-size: cover;
+      position: fixed;
+      top: 20%;
+      left: 30%;
+      width: 40%;
+      height: 40%;
+      z-index: 1;
+      display: none;
+    }
+      .scannen{
+      background: url('https://cdn.glitch.com/cd07a777-b268-452c-9877-274463a4dad4%2FScannen.png?v=1604584917603');
+      background-size: contain;
+      position: fixed;
+      top: 17%;
+      left: 10%;
+      width: 28%;
+      height: 18%;
+      z-index: 3;
+      display: none;
+    }
+     .wasistdas{
+      background: url('https://cdn.glitch.com/cd07a777-b268-452c-9877-274463a4dad4%2Fsmartlab_wasist_makeblockultimate.png?v=1603890817354');
+      background-size: contain;
+      position: fixed;
+      top: 25%;
+      left: 0;
+      width: 100%;
+      height: 30%;
+      z-index: 1;
+      display: none;
+    }
+    .nützlichkeit{
+      background: url('https://cdn.glitch.com/cd07a777-b268-452c-9877-274463a4dad4%2Fsmartlab_n%C3%BCtzlichkeit_makeblockultimate.png?v=1603797258038');
+      background-size: contain;
+      position: fixed;
+      top: 10%;
+      left: 5%;
+      width: 90%;
+      height: 50%;
+      z-index: 1;
+      display: none;
+    }
+    .specs{
+      background: url('https://cdn.glitch.com/cd07a777-b268-452c-9877-274463a4dad4%2Fsmartlab_spezifikationen_makeblockultimate.png?v=1603797258120');
+      background-size: contain;
+      position: fixed;
+      top: 0;
+      left: 10%;
+      width: 80%;
+      height: 70%;
+      z-index: 1;
+      display: none;
+    }
+    .imsmartlab{
+      background: url('https://cdn.glitch.com/cd07a777-b268-452c-9877-274463a4dad4%2Fsmartlab_imsmartlab_makeblockultimate.png?v=1603797257722');
+      background-size: contain;
+      position: fixed;
+      top: 25%;
+      left: 0;
+      width: 100%;
+      height: 28%;
+      z-index: 1;
+      display: none;
+    }
+      .iconInfo {
+      position: absolute;
+      top: 2%;
+      left: 1%;
+      width: 100%;
+      height: 15em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      background: url('https://cdn.glitch.com/cd07a777-b268-452c-9877-274463a4dad4%2Fboton-de-informacion.png?v=1604580877172');
+      background-position:center;
+      background-size: contain;
+      background-repeat:no-repeat;
+      border: none;
+      width: 30px;
+      height: 30px;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+      .iconInfo:hover {
+      opacity: 0.5;
+    }
+    .icon1 {
+      background: url('Icons_smartlab_wasistdas.png');
+      background-position:center;
+      background-size: contain;
+      background-repeat:no-repeat;
+      border: none;
+      width: 120px;
+      height: 90px;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+    .icon1:hover {
+      background: url('Icons_smartlab_wasistdas-pressed.png');
+      background-position:center;
+      background-size: contain;
+    }
+    .icon2 {
+      background: url('Icons_smartlab_nützlichkeit.png');
+      background-position:center;
+      background-size: contain;
+      background-repeat:no-repeat;
+      border: none;
+      width: 120px;
+      height: 90px;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+    .icon2:hover {
+      background: url('Icons_smartlab_nützlichkeit-pressed.png');
+      background-position:center;
+      background-size: contain;
+    }
+    .icon3 {
+      background: url('Icons_smartlab_spezifikationen.png');
+      background-position:center;
+      background-size: contain;
+      background-repeat:no-repeat;
+      border: none;
+      width: 120px;
+      height: 90px;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+    .icon3:hover {
+      background: url('Icons_smartlab_spezifikationen-pressed.png');
+      background-position:center;
+      background-size: contain;
+    }
+    .icon4 {
+      background: url('Icons_smartlab_imsmartlab.png');
+      background-position:center;
+      background-size: contain;
+      background-repeat:no-repeat;
+      border: none;
+      width: 120px;
+      height: 90px;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+    .icon4:hover {
+      background: url('Icons_smartlab_imsmartlab-pressed.png');
+      background-position:center;
+      background-size: contain;
+    }
+   }
+  </style> 
+  
   <body style="margin : 0px; overflow: hidden;">
-    
     <div class="buttons">
-      <button class="icon1"></button>
-      <button class="icon2"></button>
-      <button class="icon3"></button>
-      <button class="icon4"></button>
+      <button id="IDicon1" class="icon1" onclick="ClickIcon1()"></button>
+      <button id="IDicon2" class="icon2" onclick="ClickIcon2()"></button>
+      <button id="IDicon3" class="icon3" onclick="ClickIcon3()"></button>
+      <button id="IDicon4" class="icon4" onclick="ClickIcon4()"></button>
     </div>
-    
+    <button id="IDiconInfo" class="iconInfo" onclick="ClickIconInfo()"></button>
+    <img class= "weitereInfos" id="IDweitereInfos">
+    <img class= "scannen" id="IDscannen">
+    <img class= "wasistdas" id="IDwasistdas">
+    <img class= "nützlichkeit" id="IDnützlichkeit">
+    <img class="specs" id="IDspecs">
+    <img class="imsmartlab" id="IDimsmartlab">
+      
     <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector id="scene">
       <script>
-        window.onload = function () {
-          document
-            .querySelector(".icon1")
-            .addEventListener("click", function () {
-            // here you can change also a-scene or a-entity properties, like
-            // changing your 3D model source, size, position and so on
-            // or you can just open links, trigger actions...
-            alert("Was ist das?");
-            });
-        };
+        function ClickIconInfo() {
+          var x = document.getElementById("IDweitereInfos");
+          var y = document.getElementById("IDscannen");
+          if (x.style.display == "none" && y.style.display == "none") {
+            x.style.display = "block";
+            y.style.display = "block";
+            document.getElementById("IDnützlichkeit").style.display = "none";
+            document.getElementById("IDspecs").style.display = "none";
+            document.getElementById("IDimsmartlab").style.display = "none";
+            document.getElementById("IDwasistdas").style.display = "none";
+          } else {
+            x.style.display = "none";
+            y.style.display = "none";
+          }
+        }
+        function ClickIcon1() {
+          var x = document.getElementById("IDwasistdas");
+          if (x.style.display == "none") {
+            x.style.display = "block";
+            document.getElementById("IDnützlichkeit").style.display = "none";
+            document.getElementById("IDspecs").style.display = "none";
+            document.getElementById("IDimsmartlab").style.display = "none";
+            document.getElementById("IDweitereInfos").style.display = "none";
+            document.getElementById("IDscannen").style.display = "none";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        function ClickIcon2() {
+          var x = document.getElementById("IDnützlichkeit");
+          if (x.style.display == "none") {
+            x.style.display = "block";
+            document.getElementById("IDwasistdas").style.display = "none";
+            document.getElementById("IDspecs").style.display = "none";
+            document.getElementById("IDimsmartlab").style.display = "none";
+            document.getElementById("IDweitereInfos").style.display = "none";
+            document.getElementById("IDscannen").style.display = "none";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        function ClickIcon3() {
+          var x = document.getElementById("IDspecs");
+          if (x.style.display == "none") {
+            x.style.display = "block";
+            document.getElementById("IDwasistdas").style.display = "none";
+            document.getElementById("IDnützlichkeit").style.display = "none";
+            document.getElementById("IDimsmartlab").style.display = "none";
+            document.getElementById("IDweitereInfos").style.display = "none";
+            document.getElementById("IDscannen").style.display = "none";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        function ClickIcon4() {
+          var x = document.getElementById("IDimsmartlab");
+          if (x.style.display == "none") {
+            x.style.display = "block";
+            document.getElementById("IDwasistdas").style.display = "none";
+            document.getElementById("IDnützlichkeit").style.display = "none";
+            document.getElementById("IDspecs").style.display = "none";
+            document.getElementById("IDweitereInfos").style.display = "none";
+            document.getElementById("IDscannen").style.display = "none";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        
       </script>
+      
       <a-marker raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="marker" type="pattern" url="https://raw.githubusercontent.com/teresavr15/Vitrine-AR-content/main/pattern-smartLab%20B%26W.patt">
-   
+        
+        
         <a-entity
           id="robot"
           class="clickable"
           position="0.8 -1 1"
           rotation="-90 0 0"
-          scale="0.2 0.2 0.2"
+          scale="0.02 0.02 0.02"
           gltf-model="Roboter Arm gltf.glb"
           gesture-handler
         ></a-entity>
